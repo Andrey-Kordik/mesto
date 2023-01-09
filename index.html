@@ -19,63 +19,55 @@
                     <img class="profile__avatar" src="./images/avatar.jpg" alt="фото исследователя">
                     <div class="profile__data">
                         <h1 class="profile__heading">Жак-Ив Кусто</h1>
-                        <img class="profile__edit-button" src="./images/Edit Button.svg" alt="значок карандаша">
+                        <img class="profile__edit-button" src="./images/Edit_Button.svg" alt="значок карандаша">
                         <p class="profile__subheading">Исследователь океана</p>
                     </div>
                 </div>
-                <div class="profile__add-button"><img class="profile__vector" src="./images/Vector.png"></div>
+                <div class="profile__add-button"><img class="profile__vector" src="./images/Vector.png" alt="значок плюса"></div>
             </section>
             <section class="elements">
                 <article class="element">
-                    <img class="element__photo" src="./images/карачаевск.png" alt="фото крепости">
+                    <img class="element__photo" src="./images/карачаевск.png" alt="фото крепости в лесу">
                     <div class="element__data">
                         <h3 class="element__name">Карачаевск</h3>
-                        <img class="element__like" src="./images/like.png">
+                        <img class="element__like element__like_active" src="./images/like.png" alt="значок сердца">
                     </div>
                 </article>
                 <article class="element">
                     <img class="element__photo" src="./images/эльбрус.png" alt="фото горы">
                     <div class="element__data">
                         <h3 class="element__name">Гора Эльбрус</h3>
-                        <img class="element__like" src="./images/like.png">
+                        <img class="element__like element__like_active" src="./images/like.png" alt="значок сердца">
                     </div>
                 </article>
-
                 <article class="element">
                     <img class="element__photo" src="./images/Домбай.png" alt="фото леса и горы">
                     <div class="element__data">
                         <h3 class="element__name">Домбай</h3>
-                        <img class="element__like" src="./images/like.png">
+                        <img class="element__like element__like_active" src="./images/like.png" alt="значок сердца">
                     </div>
                 </article>
-
                 <article class="element">
-                    <img class="element__photo" src="./images/эльбрус.png" alt="фото горы">
+                    <img class="element__photo" src="./images/эльбрус.png" alt="фото горы Эльбрус">
                     <div class="element__data">
                         <h3 class="element__name">Гора Эльбрус</h3>
-                        <img class="element__like" src="./images/like.png">
+                        <img class="element__like element__like_active" src="./images/like.png" alt="значок сердца">
                     </div>
                 </article>
-
                 <article class="element">
-                    <img class="element__photo" src="./images/Домбай.png" alt="фото леса и горы">
+                    <img class="element__photo" src="./images/Домбай.png" alt="фото леса и горы в тумане">
                     <div class="element__data">
                         <h3 class="element__name">Домбай</h3>
-                        <img class="element__like" src="./images/like.png">
+                        <img class="element__like element__like_active" src="./images/like.png" alt="значок сердца">
                     </div>
                 </article>
-
-
                 <article class="element">
                     <img class="element__photo" src="./images/карачаевск.png" alt="фото крепости">
                     <div class="element__data">
                         <h3 class="element__name">Карачаево-Черкессия</h3>
-                        <img class="element__like" src="./images/like.png">
+                        <img class="element__like element__like_active" src="./images/like.png" alt="значок сердца">
                     </div>
                 </article>
-
-                </article>
-
             </section>
         </main>
         <footer class="footer">
@@ -84,13 +76,17 @@
 
     </div>
     <div class="popup">
-<form class="popup__container">
-    <h3 class="popup__container-heading">Редактировать профиль</h3>
-    <input type="text" name="Ваше имя" class="popup__container-username" value="Жак-Ив Кусто" placeholder="Ваше имя" required>
-    <input type="text" name="О себе" class="popup__container-userjob" value="Исследователь океана" placeholder="О себе" required>
-    <img class="popup__container-closing-icon" src="./images/Close Icon.png" alt="значок закрытия">
-    <button class="popup__container-savebutton"><p class="popup__container-savebutton-text">Сохранить</p></button>
-</form>
+        <form class="popup__container">
+            <h3 class="popup__container-heading">Редактировать профиль</h3>
+            <input type="text" name="Ваше имя" class="popup__container-username" value="Жак-Ив Кусто"
+                placeholder="Ваше имя" required>
+            <input type="text" name="О себе" class="popup__container-userjob" value="Исследователь океана"
+                placeholder="О себе" required>
+            <img class="popup__container-closing-icon" src="./images/Close_Icon.png" alt="значок закрытия">
+            <div class="popup__container-savebutton">
+                <p class="popup__container-savebutton-text">Сохранить</p>
+            </div>
+        </form>
     </div>
     <script src="./script/index.js"></script>
 </body>

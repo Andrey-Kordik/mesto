@@ -2,9 +2,10 @@
     max-width: 24px;
     max-height: 24px;
     margin-left: 18px;
-    align-self: flex-end;
+    align-self: center;
     cursor: pointer;
     transition: 0.4s;
+    padding-top: 10px;
 }
 
 .profile__edit-button:hover {
