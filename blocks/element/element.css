@@ -1,0 +1,6 @@
+.element {
+    max-width: 282px;
+    display: grid;
+    background-color: white;
+    border-radius: 5%;
+}
