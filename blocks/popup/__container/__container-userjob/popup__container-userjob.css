@@ -14,7 +14,7 @@
 }
 
 @media screen and (max-width: 800px) {
-    .popup__container-userjob  {
+    .popup__container-userjob {
         max-width: 238px;
         margin: 0 22px 45px;
     }
