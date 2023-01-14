@@ -6,9 +6,6 @@
     left: 0;
     background: rgba(0, 0, 0, 0.5);
     display: none;
-}
-
-.popup.active {
-    display: flex;
     flex-direction: column;
+    justify-content: center;
 }

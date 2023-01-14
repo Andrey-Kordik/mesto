@@ -1,14 +1,16 @@
 .profile__add-button {
     max-width: 150px;
     min-height: 50px;
-    border: 1px solid white;
+    border: 2px solid white;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     align-self: center;
     transition: 0.4s;
+    cursor: pointer;
+    background-color: black;
+    background-image: url(../../../images/Vector.svg);
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .profile__add-button:hover {

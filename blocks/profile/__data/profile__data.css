@@ -3,11 +3,11 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0;
-    align-items: center;
 }
 
 @media screen and (max-width: 500px) {
     .profile__data {
         justify-content: center;
+        margin-bottom: 36px;
     }
 }

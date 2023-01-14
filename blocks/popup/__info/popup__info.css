@@ -1,6 +1,6 @@
-.popup__container-username {
+.popup__info {
     border: 0;
-    font-family: 'Inter';
+    font-family: 'Inter', Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
@@ -11,10 +11,16 @@
     border-bottom: 1px solid #bcbcc4;
     background-color: transparent;
     margin: 0 36px 30px;
+
+
+}
+.popup__info:nth-child(2) {
+    margin-bottom: 0;
 }
 
+
 @media screen and (max-width: 800px) {
-    .popup__container-username  {
+    .popup__info {
         max-width: 238px;
         margin: 0 22px 30px;
     }

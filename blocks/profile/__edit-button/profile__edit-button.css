@@ -1,11 +1,13 @@
 .profile__edit-button {
-    max-width: 24px;
-    max-height: 24px;
-    margin-left: 18px;
-    align-self: center;
+    width: 24px;
+    height: 24px;
+    margin: 0 0 10px 18px;
+    align-self: flex-end;
     cursor: pointer;
     transition: 0.4s;
-    padding-top: 10px;
+    background-image: url(../../../images/Edit_Button.svg);
+    background-color: black;
+    border: 0ch;
 }
 
 .profile__edit-button:hover {
