@@ -8,7 +8,7 @@
     height: 100%;
     background-color: transparent;
     border: 0;
-    top: 31.5%;
+    top: 31%;
     right: 30%;
     position: absolute;
     background-size: contain;
@@ -26,10 +26,9 @@
 
 @media screen and (max-width: 600px) {
     .popup__closing-icon {
-        right: 0px;
         max-width: 20px;
         max-height: 20px;
         right: 3%;
-        top: 33%;
+        top: 32%;
     }
 }
