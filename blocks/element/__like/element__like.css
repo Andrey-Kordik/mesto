@@ -7,6 +7,7 @@
     transition: 0.4s;
     background-image: url(../../../images/like.svg);
     border: 0;
+    background-color: transparent;
 
 }
 

@@ -7,7 +7,7 @@
     transition: 0.4s;
     background-image: url(../../../images/Edit_Button.svg);
     background-color: black;
-    border: 0ch;
+    border: 0;
 }
 
 .profile__edit-button:hover {
@@ -17,5 +17,8 @@
 @media screen and (max-width: 500px) {
     .profile__edit-button {
         margin-left: 10px;
+        width: 18px;
+        height: 18px;
+        background-size: contain;
     }
 }

@@ -11,7 +11,7 @@
     overflow: hidden;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 670px) {
     .profile__heading {
         align-self: center;
         font-size: 27px;

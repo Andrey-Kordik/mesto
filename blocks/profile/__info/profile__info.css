@@ -3,8 +3,10 @@
     display: flex;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 670px) {
     .profile__info {
+        max-width: 600x;
+        width: 100%;
         align-items: center;
         flex-direction: column;
     }

@@ -6,24 +6,30 @@
     max-height: 32px;
     width: 100%;
     height: 100%;
-    background-color: black;
+    background-color: transparent;
     border: 0;
-    top: 16%;
-    left: 75%;
+    top: 31.5%;
+    right: 30%;
     position: absolute;
     background-size: contain;
+}
+
+@media screen and (max-width: 920px) {
+    .popup__closing-icon {
+        right: 21%;
+    }
 }
 
 .popup__closing-icon:hover {
     opacity: 0.5;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
     .popup__closing-icon {
         right: 0px;
         max-width: 20px;
         max-height: 20px;
-        left: 90%;
-        top: 18%;
+        right: 3%;
+        top: 33%;
     }
 }

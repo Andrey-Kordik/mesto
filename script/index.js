@@ -4,6 +4,8 @@ let popupClose = document.querySelector('.popup__closing-icon');
 
 function popupAppearance () {
     popup.classList.add('popup_opened');
+    nameInput.value = profileName.textContent;
+    jobInput.value = profileJob.textContent;
 };
 
 popupOpen.addEventListener('click', popupAppearance); 
@@ -23,13 +25,11 @@ let jobInput = document.getElementById ('Job')
 let profileName = document.querySelector('.profile__heading')
 let profileJob = document.querySelector('.profile__subheading')
 
-console.log(nameInput)
-
 function handleFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = nameInput.value;
     profileJob.textContent = jobInput.value;
-    popup.classList.remove('popup_opened');
+    popupDisabled();
 }
 
 
