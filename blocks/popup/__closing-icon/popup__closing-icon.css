@@ -8,16 +8,10 @@
     height: 100%;
     background-color: transparent;
     border: 0;
-    top: 31%;
-    right: 30%;
+    top: -40px;
+    right: -40px;
     position: absolute;
     background-size: contain;
-}
-
-@media screen and (max-width: 920px) {
-    .popup__closing-icon {
-        right: 21%;
-    }
 }
 
 .popup__closing-icon:hover {
@@ -28,7 +22,7 @@
     .popup__closing-icon {
         max-width: 20px;
         max-height: 20px;
-        right: 3%;
-        top: 32%;
+        top: -40px;
+        right: 0;
     }
 }

@@ -1,27 +1,15 @@
 .popup__info {
     border: 0;
+    width: 100%;
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    max-width: 358px;
-    width: 100%;
     height: 24px;
-    box-sizing: border-box;
     border-bottom: 1px solid #bcbcc4;
     background-color: transparent;
-    margin: 0 36px 30px;
-
-
+    margin-bottom: 30px;
 }
 .popup__info:nth-child(2) {
     margin-bottom: 0;
-}
-
-
-@media screen and (max-width: 800px) {
-    .popup__info {
-        max-width: 238px;
-        margin: 0 22px 30px;
-    }
 }
