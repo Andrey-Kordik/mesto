@@ -153,7 +153,12 @@ for (let i = 0; i< imageOpen.length; i++) {
 function imagesName () {
   for (let i = 0; i< photoTitle.length; i++) {
     imageOpen[i].addEventListener('click', function () {
+<<<<<<< HEAD
       imageName.textContent = photoTitle[i].textContent})
+=======
+      imageName.textContent = photoTitle[i].textContent;
+      console.log(imageName)})
+>>>>>>> de33e1c3f99116a8638bad48632d0649b7db393f
   }
 }
 
