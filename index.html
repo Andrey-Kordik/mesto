@@ -32,7 +32,7 @@
         </main>
         <template class="element">
             <article class="element__item">
-                <img class="element__photo">
+                <img class="element__photo" alt='фото места'>
                 <div class="element__data">
                     <h2 class="element__name" type="text"></h2>
                     <button class="element__like" type="button"></button>
@@ -44,7 +44,7 @@
             <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
         </footer>
     </div>
-    <div class="popup">
+    <div class="popup popup_edit-profile">
         <div class="popup__content">
             <h3 class="popup__heading">Редактировать профиль</h3>
             <form class="popup__container" name="formElement">
@@ -55,10 +55,10 @@
             <button class="popup__closing-icon" type="button"></button>
         </div>
     </div>
-    <div class="popup" id="addform">
+    <div class="popup popup_add-card">
         <div class="popup__content">
             <h3 class="popup__heading">Новое место</h3>
-            <form class="popup__container" name="formElement" id="add-data">
+            <form class="popup__container" name="formElement" id="create-form">
                 <input type="text" name="Name" id="placename" class="popup__info" placeholder="Название" required>
                 <input type="text" name="About" id="link" class="popup__info" placeholder="Ссылка на картинку" required>
                 <button class="popup__savebutton" id="addcard" type="submit">Создать</button>
@@ -66,9 +66,9 @@
             <button class="popup__closing-icon" id="addclose"></button>
         </div>
     </div>
-    <div class="popup" id="image">
+    <div class="popup popup_image">
         <div class="popup__imagebox">
-            <img class="popup__image">
+            <img class="popup__image" alt="увеличенное фото места">
             <button class="popup__closing-icon" id="imageclose"></button>
             <p class="popup__image-name"></p>
         </div>
