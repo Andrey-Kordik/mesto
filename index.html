@@ -49,18 +49,20 @@
             <h3 class="popup__heading">Редактировать профиль</h3>
             <form class="popup__container" name="editForm" novalidate>
                 <fieldset class="popup__set">
-                    <div class = "popup__field">
-                <input type="text" name="Name" id="Name" class="popup__info" placeholder="Ваше имя" minlength="2" maxlength="40" required>
-                <span class="popup__info-error Name-error"></span>
-            </div>
-            <div class ="popup__field">
-                <input type="text" name="Job" id="Job" class="popup__info" placeholder="О себе" minlength="2" maxlength="200" required>
-                <span class="popup__info-error Job-error"></span>
-            </div>
-            <button class="popup__savebutton" type="submit">Сохранить</button>
-        </fieldset>
-    </form>
-         <button class="popup__closing-icon" type="button"></button>
+                    <div class="popup__field">
+                        <input type="text" name="Name" id="Name" class="popup__info" placeholder="Ваше имя"
+                            minlength="2" maxlength="40" required>
+                        <span class="popup__info-error Name-error"></span>
+                    </div>
+                    <div class="popup__field">
+                        <input type="text" name="Job" id="Job" class="popup__info" placeholder="О себе" minlength="2"
+                            maxlength="200" required>
+                        <span class="popup__info-error Job-error"></span>
+                    </div>
+                    <button class="popup__savebutton" type="submit">Сохранить</button>
+                </fieldset>
+            </form>
+            <button class="popup__closing-icon" type="button"></button>
         </div>
     </div>
     <div class="popup popup_add-card">
@@ -68,17 +70,18 @@
             <h3 class="popup__heading">Новое место</h3>
             <form class="popup__container" name="addForm" id="create-form" novalidate>
                 <fieldset class="popup__set">
-                    <div class = "popup__field">
-                <input type="text" name="placename" id="placename" class="popup__info" placeholder="Название" inlength="2" maxlength="30" required>
-                <span class="popup__info-error placename-error"></span>
-            </div>
-            <div class = "popup__field">
-                <input type="url" name="link" id="link" class="popup__info" placeholder="Ссылка на картинку" required>
-                <span class="popup__info-error link-error"></span>
-            </div>
-                <button class="popup__savebutton" id="addcard" type="submit">Создать</button>
-            </fieldset>
-        </form>
+                    <div class="popup__field">
+                        <input type="text" name="placename" id="placename" class="popup__info" placeholder="Название"
+                            inlength="2" maxlength="30" required>
+                        <span class="popup__info-error placename-error"></span>
+                    </div>
+                    <div class="popup__field">
+                        <input type="url" name="link" id="link" class="popup__info" placeholder="Ссылка на картинку"
+                            required>
+                        <span class="popup__info-error link-error"></span>
+                    </div>
+                    <button class="popup__savebutton" id="addcard" type="submit">Создать</button>
+                </fieldset>
             </form>
             <button class="popup__closing-icon" id="addclose"></button>
         </div>
