@@ -9,6 +9,7 @@
     background-color: white;
     position: relative;
     border-radius: 10px;
+    cursor: auto;
 }
 
 @media screen and (max-width: 500px) {

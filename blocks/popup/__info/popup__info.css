@@ -8,8 +8,11 @@
     height: 24px;
     border-bottom: 1px solid #bcbcc4;
     background-color: transparent;
-    margin-bottom: 30px;
+    outline: none;
 }
-.popup__info:nth-child(2) {
-    margin-bottom: 0;
-}
+
+.popup__info:focus {
+    border: 1px solid blue;
+    }
+
+
