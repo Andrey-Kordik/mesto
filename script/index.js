@@ -1,3 +1,5 @@
+
+
 const popup = document.querySelector('.popup')
 const popupEditProfile = document.querySelector('.popup_edit-profile');
 const buttonOpenEditProfilePopup = document.querySelector('.profile__edit-button');
@@ -8,7 +10,6 @@ const nameInput = document.getElementById('Name')
 const jobInput = document.getElementById('Job')
 const profileName = document.querySelector('.profile__heading')
 const profileJob = document.querySelector('.profile__subheading')
-const form = document.querySelector('.popup__container')
 
 
 
@@ -20,20 +21,23 @@ buttonOpenEditProfilePopup.addEventListener('click', function () {
 function openEditProfilePopup() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  enableValidation()
 };
+
+
+const popups = document.querySelectorAll(".popup")
+
+popups.forEach((popup) => {
+popup.addEventListener('click', (evt) => {
+  if (evt.target === popup) {
+    closePopup(popup)
+  }
+})
+});
 
 
 function openPopup(popup) {
   popup.classList.add('popup_opened')
-
-
-  const popupActive = document.querySelector('.popup_opened')
-  popupActive.addEventListener('click', function (e) {
-    if (!e.target.closest('.popup__commonclass')) {
-      closePopup(e.target.closest('.popup'))
-    }
-  });
+  document.addEventListener('keydown', closePopupByEsc)
 };
 
 
@@ -64,6 +68,8 @@ buttonOpenAddCardPopup.addEventListener('click', function () {
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupByEsc)
+
 };
 
 buttonCloseEditProfilePopup.addEventListener('click', function () {
@@ -81,13 +87,12 @@ buttonCloseImagePopup.addEventListener('click', function () {
 });
 
 
-document.addEventListener('keydown', function (evt) {
+function closePopupByEsc (evt) {  
   if (evt.keyCode === 27) {
-    const popupActive = document.querySelector('.popup_opened')
-    closePopup(popupActive)
-  }
-});
-
+  const popupActive = document.querySelector('.popup_opened')
+  closePopup(popupActive)
+}
+};
 
 
 const elementsList = document.querySelector('.elements')
@@ -177,7 +182,6 @@ function createCardFormSubmit(evt) {
 
   placeImage.value = ''
   placeTitle.value = ''
-  enableValidation()
 }
 
 formCreateCard.addEventListener('submit', createCardFormSubmit);
