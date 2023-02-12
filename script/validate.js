@@ -29,8 +29,6 @@ const setEventListeners = (formSelector) => {
   const inputList = Array.from(formSelector.querySelectorAll('.popup__info'));
   const submitButtonSelector = formSelector.querySelector('.popup__savebutton');
 
-
-
   toggleButtonState(inputList, submitButtonSelector);
   inputList.forEach((inputSelector) => {
 
@@ -42,13 +40,13 @@ const setEventListeners = (formSelector) => {
 }
 
 
-const enableValidation = () => {
+
+function enableValidation () {
   const formList = Array.from(document.querySelectorAll('.popup__container'));
-  formList.forEach((formSelector) => {
+  formList.forEach((formSelector) => {  
     const fieldsetList = Array.from(formSelector.querySelectorAll('.popup__set'));
     fieldsetList.forEach((fieldSet) => {
-      setEventListeners(fieldSet);
-
+      setEventListeners(fieldSet)
     });
   });
 }
@@ -70,9 +68,7 @@ enableValidation({
   submitButtonSelector: '.popup__savebutton',
   inactiveButtonClass: 'savebutton_inactive',
   inputErrorClass: 'popup__info_type_error',
-  errorClass: 'popup__info-error',
-  popupEditProfile: '.popup_edit-profile',
-  formCreateCard: 'create-form'
+  errorClass: 'popup__info-error'
 });
 
-enableValidation()
+
