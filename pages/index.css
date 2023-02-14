@@ -32,9 +32,9 @@
 @import url(../blocks/element/__delete-button/element__delete-button.css);
 @import url(../blocks/popup/__imagebox/popup__imagebox.css);
 @import url(../blocks/popup/__image-name/popup__image-name.css);
-@import url(../blocks/popup/__info/_type_error/popup__info_type_error.css);
 @import url(../blocks/popup/__set/popup__set.css);
 @import url(../blocks/popup/__info-error/popup__info-error.css);
-@import url(../blocks/popup/__savebutton/_inactive/savebutton_inactive.css);
+@import url(../blocks/popup/__savebutton/_inactive/popup__savebutton_inactive.css);
 @import url(../blocks/popup/_image/popup_image.css);
 @import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__info/_type_erorr/popup__info_type_error.css);

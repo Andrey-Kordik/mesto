@@ -21,7 +21,6 @@ buttonOpenEditProfilePopup.addEventListener('click', function () {
 function openEditProfilePopup() {
   nameInput.value = profileName.textContent;
   jobInput.value = profileJob.textContent;
-  enableValidation() //не знаю как сделать если уберу то валидация начинается после работы с инпутами
 };
 
 
@@ -183,7 +182,6 @@ function createCardFormSubmit(evt) {
 
   placeImage.value = ''
   placeTitle.value = ''
-  enableValidation() //не знаю как сделать если уберу то валидация начинается после работы с инпутами
 }
 
 formCreateCard.addEventListener('submit', createCardFormSubmit);
