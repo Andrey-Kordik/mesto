@@ -51,6 +51,7 @@ function submitFormEditProfile(evt) {
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
   closePopup(popupEditProfile);
+
 }
 
 formEditProfile.addEventListener('submit', submitFormEditProfile);
