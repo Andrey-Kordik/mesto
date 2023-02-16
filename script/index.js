@@ -1,5 +1,4 @@
 
-
 const popup = document.querySelector('.popup')
 const popupEditProfile = document.querySelector('.popup_edit-profile');
 const buttonOpenEditProfilePopup = document.querySelector('.profile__edit-button');
@@ -10,12 +9,14 @@ const nameInput = document.getElementById('Name')
 const jobInput = document.getElementById('Job')
 const profileName = document.querySelector('.profile__heading')
 const profileJob = document.querySelector('.profile__subheading')
-
+const formProfileButton = document.getElementById('editform') 
 
 
 buttonOpenEditProfilePopup.addEventListener('click', function () {
   openPopup(popupEditProfile);
   openEditProfilePopup()
+  formProfileButton.removeAttribute('disabled')
+  formProfileButton.classList.remove('popup__savebutton_inactive')
 });
 
 function openEditProfilePopup() {
@@ -57,14 +58,15 @@ function submitFormEditProfile(evt) {
 formEditProfile.addEventListener('submit', submitFormEditProfile);
 
 
-
-
 const popupAddCard = document.querySelector('.popup_add-card');
 const buttonOpenAddCardPopup = document.querySelector('.profile__add-button')
 const buttonCloseAddCardPopup = document.getElementById('addclose')
+const buttonCreateCard = document.getElementById('addcard')
 
 buttonOpenAddCardPopup.addEventListener('click', function () {
   openPopup(popupAddCard);
+  buttonCreateCard.setAttribute('disabled', 'disabled')
+  buttonCreateCard.classList.add('popup__savebutton_inactive')
 });
 
 function closePopup(popup) {
@@ -77,8 +79,10 @@ buttonCloseEditProfilePopup.addEventListener('click', function () {
   closePopup(popupEditProfile);
 });
 
+
 buttonCloseAddCardPopup.addEventListener('click', function () {
   closePopup(popupAddCard);
+
 });
 
 const buttonCloseImagePopup = document.getElementById('imageclose')
@@ -183,6 +187,7 @@ function createCardFormSubmit(evt) {
 
   placeImage.value = ''
   placeTitle.value = ''
+  
 }
 
 formCreateCard.addEventListener('submit', createCardFormSubmit);
