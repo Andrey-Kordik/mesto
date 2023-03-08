@@ -47,7 +47,7 @@
     <div class="popup popup_edit-profile">
         <div class="popup__content popup__commonclass">
             <h3 class="popup__heading">Редактировать профиль</h3>
-            <form class="popup__container" name="editForm" novalidate>
+            <form class="popup__container" name="editForm" id="profileForm" novalidate>
                 <fieldset class="popup__set">
                         <input type="text" name="Name" id="Name" class="popup__info" placeholder="Ваше имя"
                             minlength="2" maxlength="40" required>
@@ -85,8 +85,9 @@
             <p class="popup__image-name"></p>
         </div>
     </div>
-    <script src="./script/validate.js"></script>
-    <script src="./script/index.js"></script>
+    <script type="module" src="./script/FormValidator.js"></script>
+    <script type="module" src="./script/index.js"></script>
+    <script type="module" src="./script/Card.js"></script>
 </body>
 
 </html>

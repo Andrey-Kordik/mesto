@@ -20,7 +20,6 @@ const checkInputValidity = (formSelector, inputSelector) => {
   }
 };
 
-
 const setEventListeners = (formSelector, {submitButtonSelector, inputSelector}) => {
   const submitButton = formSelector.querySelector(submitButtonSelector)
   const inputList = Array.from(formSelector.querySelectorAll(inputSelector));
@@ -45,7 +44,6 @@ function toggleButtonState(inputList, submitButtonSelector) {
   }
 };
 
-
 function enableValidation (config) {
   
   const formList = Array.from(document.querySelectorAll(config.formSelector));
@@ -53,7 +51,6 @@ function enableValidation (config) {
       setEventListeners(formSelector, config)
   });
 }
-
 const config = {
   formSelector: '.popup__container',
   inputSelector: '.popup__info',
@@ -62,7 +59,6 @@ const config = {
   inputErrorClass: 'popup__info_type_error',
   errorClass: 'popup__info-error',
 }
-
 
 enableValidation(config);
 
