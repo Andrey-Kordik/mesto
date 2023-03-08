@@ -41,7 +41,6 @@ popups.forEach((popup) => {
   })
 });
 
-
 const formEditProfile = document.querySelector('.popup_edit-profile')
 
 function submitFormEditProfile(evt) {
@@ -66,7 +65,6 @@ buttonOpenAddCardPopup.addEventListener('click', function () {
   formCreateCard.reset()
 });
 
-
 buttonCloseEditProfilePopup.addEventListener('click', function () {
   closePopup(popupEditProfile);
 });
@@ -83,7 +81,7 @@ buttonCloseImagePopup.addEventListener('click', function () {
 
 const elements = document.querySelector('.elements')
 
-const createCard = (item, title, link) => {
+const createCard = (item) => {
   const card = new Card (item, '.element')
   const cardElement = card.generateCard()
   elements.prepend(cardElement)
@@ -94,13 +92,12 @@ initialCards.forEach((item) => {
   createCard(item)
 })
 
-
 function createCardFormSubmit(evt) {
   evt.preventDefault();
   const title = placeTitle.value
   const image = placeImage.value
   createCard({title:title, link:image})
-  
+
   closePopup(popupAddCard);
   formCreateCard.reset()
 }
