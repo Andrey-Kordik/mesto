@@ -1,5 +1,5 @@
-import {imagePopup,imagePicture,imageName } from "./index.js"
-import { openPopup } from "./index.js";
+import {imagePopup,imagePicture,imageName } from "./utils/constants.js"
+import {openPopup} from "./utils/utils.js"
 
 
 export default class Card {
@@ -7,8 +7,6 @@ export default class Card {
       this._title = data.title;
       this._link = data.link;
       this._templateSelector = templateSelector
-      console.log(data.title)
-      console.log(data.link)
     }
   
     _getTemplate() {
