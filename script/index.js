@@ -7,23 +7,33 @@ const popup = document.querySelector('.popup')
 const popupEditProfile = document.querySelector('.popup_edit-profile');
 const buttonOpenEditProfilePopup = document.querySelector('.profile__edit-button');
 const buttonCloseEditProfilePopup = document.querySelector('.popup__closing-icon');
-
 const nameInput = document.getElementById('Name')
 const jobInput = document.getElementById('Job')
 const profileName = document.querySelector('.profile__heading')
 const profileJob = document.querySelector('.profile__subheading')
-const formProfileButton = document.getElementById('editform')
 const profileForm = document.getElementById('profileForm')
-
 const placeTitle = document.getElementById('placename');
 const placeImage = document.getElementById('link');
 const formCreateCard = document.getElementById('create-form')
 
+const config = {
+  formSelector: '.popup__container',
+  inputSelector: '.popup__info',
+  submitButtonSelector: '.popup__savebutton',
+  inactiveButtonClass: 'popup__savebutton_inactive',
+  inputErrorClass: 'popup__info_type_error',
+  errorClass: 'popup__info-error',
+}
+
+const editProfileValidator = new FormValidator(config, profileForm)
+editProfileValidator.enableValidation()
+const createCardValidator = new FormValidator(config, formCreateCard)
+createCardValidator.enableValidation()
+
 buttonOpenEditProfilePopup.addEventListener('click', function () {
   openPopup(popupEditProfile);
   openEditProfilePopup()
-  formProfileButton.removeAttribute('disabled')
-  formProfileButton.classList.remove('popup__savebutton_inactive')
+
 });
 
 function openEditProfilePopup() {
@@ -32,7 +42,6 @@ function openEditProfilePopup() {
 };
 
 const popups = document.querySelectorAll(".popup")
-
 popups.forEach((popup) => {
   popup.addEventListener('click', (evt) => {
     if (evt.target === popup) {
@@ -56,13 +65,11 @@ formEditProfile.addEventListener('submit', submitFormEditProfile);
 const popupAddCard = document.querySelector('.popup_add-card');
 const buttonOpenAddCardPopup = document.querySelector('.profile__add-button')
 const buttonCloseAddCardPopup = document.getElementById('addclose')
-const buttonCreateCard = document.getElementById('addcard')
 
 buttonOpenAddCardPopup.addEventListener('click', function () {
   openPopup(popupAddCard);
-  buttonCreateCard.setAttribute('disabled', 'disabled')
-  buttonCreateCard.classList.add('popup__savebutton_inactive')
   formCreateCard.reset()
+  createCardValidator.disableSubmitButton();
 });
 
 buttonCloseEditProfilePopup.addEventListener('click', function () {
@@ -81,15 +88,19 @@ buttonCloseImagePopup.addEventListener('click', function () {
 
 const elements = document.querySelector('.elements')
 
-const createCard = (item) => {
-  const card = new Card (item, '.element')
-  const cardElement = card.generateCard()
-  elements.prepend(cardElement)
+const createCard = (item) => { 
+  const card = new Card (item, '.element') 
+  const cardElement = card.generateCard() 
   return cardElement
+} 
+
+const addCard = (item) => {
+  elements.prepend(createCard(item));
 }
 
 initialCards.forEach((item) => {
   createCard(item)
+  addCard(item)
 })
 
 function createCardFormSubmit(evt) {
@@ -97,24 +108,11 @@ function createCardFormSubmit(evt) {
   const title = placeTitle.value
   const image = placeImage.value
   createCard({title:title, link:image})
+  addCard({title:title, link:image})
 
   closePopup(popupAddCard);
   formCreateCard.reset()
 }
 
 formCreateCard.addEventListener('submit', createCardFormSubmit);
-
-const config = {
-  formSelector: '.popup__container',
-  inputSelector: '.popup__info',
-  submitButtonSelector: '.popup__savebutton',
-  inactiveButtonClass: 'popup__savebutton_inactive',
-  inputErrorClass: 'popup__info_type_error',
-  errorClass: 'popup__info-error',
-}
-
-const editProfileValidator = new FormValidator(config, profileForm)
-editProfileValidator.enableValidation()
-const createCardValidator = new FormValidator(config, formCreateCard)
-createCardValidator.enableValidation()
 
