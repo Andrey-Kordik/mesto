@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./pages/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Место</title>
+</head>
+
+<body class="project">
+    <div class="page">
+        <header class="header">
+            <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="логотип сайта">
+        </header>
+        <main>
+            <section class="profile">
+                <div class="profile__info">
+                    <img class="profile__avatar" src="<%=require('./images/avatar.jpg')%>" alt="фото исследователя">
+                    <div class="profile__data">
+                        <h1 class="profile__heading">Жак-Ив Кусто</h1>
+                        <button class="profile__edit-button" type="button"></button>
+                        <p class="profile__subheading">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="profile__add-button" type="button">
+                </button>
+            </section>
+            <section class="elements">
+
+            </section>
+        </main>
+        <template class="element">
+            <article class="element__item">
+                <img class="element__photo" alt='фото места'>
+                <div class="element__data">
+                    <h2 class="element__name" type="text"></h2>
+                    <button class="element__like" type="button"></button>
+                </div>
+                <button class="element__delete-button"></button>
+            </article>
+        </template>
+        <footer class="footer">
+            <p class="footer__copyright">&copy; 2020 Mesto Russia</p>
+        </footer>
+    </div>
+    <div class="popup popup_edit-profile">
+        <div class="popup__content popup__commonclass">
+            <h3 class="popup__heading">Редактировать профиль</h3>
+            <form class="popup__container" name="editForm" id="profileForm" novalidate>
+                <fieldset class="popup__set">
+                        <input type="text" name="Name" id="Name" class="popup__info" placeholder="Ваше имя"
+                            minlength="2" maxlength="40" required>
+                        <span class="popup__info-error Name-error"></span>
+                        <input type="text" name="Job" id="Job" class="popup__info" placeholder="О себе" minlength="2"
+                            maxlength="200" required>
+                        <span class="popup__info-error Job-error"></span>
+                    <button class="popup__savebutton" id="editform" type="submit">Сохранить</button>
+                </fieldset>
+            </form>
+            <button class="popup__closing-icon" type="button"></button>
+        </div>
+    </div>
+    <div class="popup popup_add-card">
+        <div class="popup__content popup__commonclass">
+            <h3 class="popup__heading">Новое место</h3>
+            <form class="popup__container" name="addForm" id="create-form" novalidate>
+                <fieldset class="popup__set">
+                        <input type="text" name="placename" id="placename" class="popup__info" placeholder="Название"
+                            minlength="2" maxlength="30" required>
+                        <span class="popup__info-error placename-error"></span>
+                        <input type="url" name="link" id="link" class="popup__info" placeholder="Ссылка на картинку"
+                            required>
+                        <span class="popup__info-error link-error"></span>
+                    <button class="popup__savebutton" id="addcard" type="submit">Создать</button>
+                </fieldset>
+            </form>
+            <button class="popup__closing-icon" id="addclose"></button>
+        </div>
+    </div>
+    <div class="popup popup_image">
+        <div class="popup__imagebox popup__commonclass">
+            <img class="popup__image" alt="увеличенное фото места">
+            <button class="popup__closing-icon" id="imageclose"></button>
+            <p class="popup__image-name"></p>
+        </div>
+    </div>
+    <script type="module" src="./components/FormValidator.js"></script>
+    <script type="module" src="./pages/index.js"></script>
+    <script type="module" src="./components/Card.js"></script>
+    <script type="module" src="./components/utils/constants.js"></script>
+    <script type="module" src="./components/Section.js"></script>
+    <script type="module" src="./components/Popup.js"></script>
+    <script type="module" src="./components/PopupWithForm.js"></script>
+    <script type="module" src="./components/PopupWithImage.js"></script>
+    <script type="module" src="./components/UserInfo.js"></script>
+</body>
+
+</html>
