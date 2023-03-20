@@ -1,8 +1,8 @@
 
 export default class Card {
-    constructor(data, templateSelector, popupOpener) {
-      this._title = data.title;
-      this._link = data.link;
+    constructor({title, link}, templateSelector, popupOpener) {
+      this._title = title;
+      this._link = link;
       this._templateSelector = templateSelector
       this._popupOpener = popupOpener
     }
@@ -17,6 +17,7 @@ export default class Card {
       this._setEventListeners()
   
       this._element.querySelector('.element__photo').src = this._link
+      this._element.querySelector('.element__photo').alt = this._title
       this._element.querySelector('.element__name').textContent = this._title
 
   
@@ -25,7 +26,7 @@ export default class Card {
   
     _setEventListeners() {
       this._element.querySelector('.element__photo').addEventListener('click', () => {
-        this._handleOpenPopup ()
+        this._handleImageClick ()
       });
   
       this._toggleLikebutton();
@@ -36,16 +37,21 @@ export default class Card {
      }
     
   
-  _handleOpenPopup () {
+   _handleImageClick () {
     this._popupOpener( this._link, this._title)
   }
 
     _toggleLikebutton() {
-      this._element.querySelector('.element__like').addEventListener('click', function (evt) {
-        evt.target.classList.toggle('element__like_active');
+      this._element.querySelector('.element__like').addEventListener('click',  (evt) => {
+        this._toggleLike(evt)
       })
     }
   
+
+    _toggleLike(evt){
+      evt.target.classList.toggle('element__like_active'); 
+} 
+
     _removeCard () {
       this._element.remove()
       }

@@ -30,8 +30,8 @@ export const initialCards = [
   
     }
   ];
-export const buttonsClosePopup = document.querySelectorAll('.popup__closing-icon');
-export const popups = document.querySelectorAll(".popup")
+export const buttonsClosePopup = document.querySelector('.popup__closing-icon');
+export const popup = document.querySelector(".popup")
 export const placeTitle = document.getElementById('placename');
 export const placeImage = document.getElementById('link');
 export const formCreateCard = document.getElementById('create-form')
@@ -59,4 +59,4 @@ export const config = {
 export const popupEditProfile = document.querySelector('.popup_edit-profile');
 export const buttonOpenEditProfilePopup = document.querySelector('.profile__edit-button');
 export const profileForm = document.getElementById('profileForm')
-
+export const inputList = document.querySelectorAll ('.popup__info')

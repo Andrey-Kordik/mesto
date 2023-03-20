@@ -1,4 +1,3 @@
-import { popups, buttonsClosePopup } from "../components/utils/constants.js"
 
 export default class Popup {
   constructor(popupSelector) {
@@ -23,23 +22,17 @@ export default class Popup {
   }
 
   _closePopupByArea() {
-    popups.forEach((popup) => {
-      popup.addEventListener('click', (evt) => {
-        if (evt.target === popup) {
-          this.close(popup)
+      this._popup.addEventListener('click', (evt) => {
+        if (evt.target === this._popup) {
+          this.close()
         }
       })
-    });
   }
 
   _closePopupByClosingIcon() {
-    buttonsClosePopup.forEach((closeButton) => {
-      closeButton.addEventListener('click', () => {
-        popups.forEach((popup) => {
-          this.close(popup)
+    this._popup.querySelector('.popup__closing-icon').addEventListener('click', () => {
+          this.close()
         })
-      })
-    })
   }
   
   setEventListeners() {
