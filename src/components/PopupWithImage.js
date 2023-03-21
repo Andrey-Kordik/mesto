@@ -13,7 +13,10 @@ export default class PopupWithImage extends Popup {
         this._picture.src = picture
         this._picture.alt = title
         this._title.textContent = title
-        super.setEventListeners()
     }
 
+    setEventListeners(picture, title) {
+        this.open(picture, title)
+        super.setEventListeners()
+    }
 }

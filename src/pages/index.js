@@ -17,7 +17,7 @@ createCardValidator.enableValidation()
 
 const pictureOpened = new PopupWithImage(imagePopup, imagePicture, imageName)
 const handleCardClick = (picture, title) => {
-  pictureOpened.open(picture, title)
+  pictureOpened.setEventListeners(picture, title)
 }
 
 const defaultCardList = new Section({
@@ -44,8 +44,8 @@ function createCard(title, link) {
   return cardElement
 }
 
-function createCardFormSubmit() {
-  const card = createCard(placeTitle.value, placeImage.value)
+function createCardFormSubmit(inputValues) {
+  const card = createCard(inputValues['placename'], inputValues['link'])
   defaultCardList.addItem(card)
 }
 
@@ -56,8 +56,8 @@ const userInformation = new UserInfo({
 
 const popupProfile = new PopupWithForm(popupEditProfile, profileForm, editProdileformSubmit, inputList)
 
-function editProdileformSubmit() {
-  userInformation.setUserInfo(nameInput.value, jobInput.value)
+function editProdileformSubmit(inputValues) {
+  userInformation.setUserInfo(inputValues['Name'], inputValues['Job'])
 }
 
 buttonOpenEditProfilePopup.addEventListener('click', () => {
