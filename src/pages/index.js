@@ -16,8 +16,10 @@ const createCardValidator = new FormValidator(config, formCreateCard)
 createCardValidator.enableValidation()
 
 const pictureOpened = new PopupWithImage(imagePopup, imagePicture, imageName)
+pictureOpened.setEventListeners()
+
 const handleCardClick = (picture, title) => {
-  pictureOpened.setEventListeners(picture, title)
+  pictureOpened.open(picture, title)
 }
 
 const defaultCardList = new Section({
