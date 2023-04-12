@@ -5,8 +5,10 @@ export default class PopupWithForm extends Popup {
         super(popupSelector);
         this._popup = popupSelector
         this._submitForm = submitForm;
+        this._buttonConfirm = this._popup.querySelector('.popup__savebutton');
         this._form = form
         this._inputList = inputList
+        this._textButton = this._buttonConfirm.textContent;
     }
 
     _getInputValues() {
@@ -22,6 +24,13 @@ export default class PopupWithForm extends Popup {
         this._form.reset()
     }
 
+    renderSaving(status){
+        if(status){
+          this._buttonConfirm.textContent = `Cохранение...`;
+        } else {
+          this._buttonConfirm.textContent = this._textButton;
+        }
+      }
 
     setEventListeners() {
         super.setEventListeners()
