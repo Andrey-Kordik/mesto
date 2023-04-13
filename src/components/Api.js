@@ -56,10 +56,7 @@
     editAvatar ({avatar}) {
         return fetch(`${this.url}/users/me/avatar`,{
             method: 'PATCH',
-            headers: {
-                authorization: '14d16ec7-c7e8-4070-bd40-31591cadb169',
-                'Content-Type': 'application/json'
-              },
+            headers: this.headers,
             body: JSON.stringify ({
                 avatar:avatar
             })

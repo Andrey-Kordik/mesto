@@ -1,7 +1,10 @@
 
 export default class Popup {
-  constructor(popupSelector) {
-    this._popup = popupSelector;
+  constructor(popup, form, title, picture) {
+    this._popup = popup;
+    this._form = form
+    this._picture = picture
+    this._title = title
     this._handleEscClose = this._handleEscClose.bind(this)
   }
 

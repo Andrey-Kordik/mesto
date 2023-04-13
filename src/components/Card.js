@@ -55,7 +55,6 @@ export default class Card {
   setLikes(arr) {
     this._likeCounter.textContent = arr.length;
     this._likes = arr;
-    console.log(this._likes)
     if (this._checkLike()) {
       this.addLike()
     } else {

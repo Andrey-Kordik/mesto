@@ -17,7 +17,7 @@ editProfileValidator.enableValidation()
 const createCardValidator = new FormValidator(config, formCreateCard)
 createCardValidator.enableValidation()
 
-const pictureOpened = new PopupWithImage(imagePopup, imagePicture, imageName)
+const pictureOpened = new PopupWithImage(imagePopup)
 pictureOpened.setEventListeners()
 
 const handleCardClick = (picture, name) => {
@@ -30,7 +30,6 @@ function handleTrashClick(id, card) {
 }
 
 function handleDeleteConfirm(id, card) {
-  console.log(id)
   api.deleteCard(id)
     .then(() => {
       card.removeCard();
@@ -41,7 +40,7 @@ function handleDeleteConfirm(id, card) {
     });
 }
 
-const popupChangeAvatar = new PopupWithForm(popupAvatar, formChangeAvatar, handleChangeAvatar, inputList);
+const popupChangeAvatar = new PopupWithForm(popupAvatar, formChangeAvatar, handleChangeAvatar);
 
 popupChangeAvatar.setEventListeners();
 
@@ -98,7 +97,9 @@ function createCardFormSubmit(inputValues) {
   popupAddForm.renderSaving(true)
   api.addCard({placename: inputValues.placename, link:inputValues.link})
   .then ((data) =>  { const card = createCard(data, userId)
-  defaultCardList.addItem(card)})
+  defaultCardList.addItem(card),
+  popupAddForm.close()
+})
   .catch(err => {
     console.log(err.message)
   })
@@ -112,6 +113,7 @@ function editProfileformSubmit(inputValues) {
   api.editUserData({name: inputValues.name, job: inputValues.job})
   .then((data) => {
     userInformation.setUserInfo(data)
+    popupProfile.close()
   })
   .catch(err => {
     console.log(err.message)
@@ -122,7 +124,7 @@ function editProfileformSubmit(inputValues) {
 }
 
 const popupAddCard = document.querySelector('.popup_add-card');
-const popupAddForm = new PopupWithForm(popupAddCard, formCreateCard, createCardFormSubmit, inputList)
+const popupAddForm = new PopupWithForm(popupAddCard, formCreateCard, createCardFormSubmit)
 
 buttonOpenAddCardPopup.addEventListener('click', () => {
   popupAddForm.open()
@@ -136,7 +138,7 @@ const userInformation = new UserInfo({
   avatar: '.profile__avatar'
 })
 
-const popupProfile = new PopupWithForm(popupEditProfile, profileForm, editProfileformSubmit, inputList)
+const popupProfile = new PopupWithForm(popupEditProfile, profileForm, editProfileformSubmit)
 
 buttonOpenEditProfilePopup.addEventListener('click', () => {
   const userOriginValue = userInformation.getUserInfo()
