@@ -40,7 +40,7 @@ function handleDeleteConfirm(id, card) {
     });
 }
 
-const popupChangeAvatar = new PopupWithForm(popupAvatar, formChangeAvatar, handleChangeAvatar);
+const popupChangeAvatar = new PopupWithForm(popupAvatar, handleChangeAvatar);
 
 popupChangeAvatar.setEventListeners();
 
@@ -124,7 +124,7 @@ function editProfileformSubmit(inputValues) {
 }
 
 const popupAddCard = document.querySelector('.popup_add-card');
-const popupAddForm = new PopupWithForm(popupAddCard, formCreateCard, createCardFormSubmit)
+const popupAddForm = new PopupWithForm(popupAddCard, createCardFormSubmit)
 
 buttonOpenAddCardPopup.addEventListener('click', () => {
   popupAddForm.open()
@@ -138,7 +138,7 @@ const userInformation = new UserInfo({
   avatar: '.profile__avatar'
 })
 
-const popupProfile = new PopupWithForm(popupEditProfile, profileForm, editProfileformSubmit)
+const popupProfile = new PopupWithForm(popupEditProfile, editProfileformSubmit)
 
 buttonOpenEditProfilePopup.addEventListener('click', () => {
   const userOriginValue = userInformation.getUserInfo()
